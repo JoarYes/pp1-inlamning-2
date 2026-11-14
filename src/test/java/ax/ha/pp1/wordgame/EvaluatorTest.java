@@ -15,6 +15,7 @@ class EvaluatorTest {
         assertEquals("[K][A][L][L][A]", result.toString());
     }
 
+    @Test
     void oneCorrectLetterInCorrectSpotAndNotCorrectLetters()
     {
         GuessResult result = Evaluator.evaluate("XXXXA", "KRÅKA");
@@ -23,6 +24,7 @@ class EvaluatorTest {
         assertEquals("-X--X--X--X-[A]", result.toString());
     }
 
+    @Test
     void oneCorrectLetterInWrongSpot()
     {
         GuessResult result = Evaluator.evaluate("AXXXX", "KRÅKA");
@@ -31,6 +33,7 @@ class EvaluatorTest {
         assertEquals("(A)-X--X--X--X-", result.toString());
     }
 
+    @Test
     void twoCorrectSameLettersInCorrectSpot()
     {
         GuessResult result = Evaluator.evaluate("KXXKX", "KRÅKA");
@@ -39,6 +42,7 @@ class EvaluatorTest {
         assertEquals("[K]-X--X-[K]-X-", result.toString());
     }
 
+    @Test
     void twoCorrectLettersInCorrectAndWrongSpot()
     {
         GuessResult result = Evaluator.evaluate("XLLXX", "KALLA");
@@ -47,6 +51,7 @@ class EvaluatorTest {
         assertEquals("-X-(L)[L]-X--X-", result.toString());
     }
 
+    @Test
     void twoCorrectLettersInWrongSpot()
     {
         GuessResult result = Evaluator.evaluate("XLLXX", "KALLA");
@@ -55,6 +60,7 @@ class EvaluatorTest {
         assertEquals("(L)(L)-X--X--X-", result.toString());
     }
 
+    @Test
     void lowerCaseGuess()
     {
         GuessResult result = Evaluator.evaluate("kyrka", "KRÅKA");
@@ -62,6 +68,7 @@ class EvaluatorTest {
         assertEquals("[K]-Y-(R)[K][A]", result.toString());
     }
 
+    @Test
     void åäöIsValid()
     {
         GuessResult result = Evaluator.evaluate("XXXXÅ", "KRÅKA");
@@ -77,17 +84,20 @@ class EvaluatorTest {
         assertEquals("-X--X--Ö--X--X-", result3.toString());
     }
 
+    @Test
     void tooLongGuess()
     {
         IllegalArgumentException result = assertThrows(IllegalArgumentException.class, () -> Evaluator.evaluate("XXXXXX", "KRÅKA"));
     }
 
+    @Test
     void illegalCharacters()
     {
         IllegalArgumentException result = assertThrows(IllegalArgumentException.class, () -> Evaluator.evaluate("XX?XX", "KRÅKA"));
         IllegalArgumentException result2 = assertThrows(IllegalArgumentException.class, () -> Evaluator.evaluate("XX1XX", "KRÅKA"));
     }
 
+    @Test
     void testValidWords()
     {
         assertFalse(Evaluator.isValidWord("NONOX"));
