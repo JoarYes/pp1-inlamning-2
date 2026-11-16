@@ -68,7 +68,7 @@ public final class GuessResult {
 
     /** Sant om alla bokstäver är CORRECT. */
     public boolean isCorrect() {
-        Boolean returnBool = true;
+        boolean returnBool = true;
         for (int i = 0; i < guess.length; i++)
         {
             if (marks[i] != 2)

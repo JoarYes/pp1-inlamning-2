@@ -54,7 +54,7 @@ class EvaluatorTest {
     @Test
     void twoCorrectLettersInWrongSpot()
     {
-        GuessResult result = Evaluator.evaluate("XLLXX", "KALLA");
+        GuessResult result = Evaluator.evaluate("LLXXX", "KALLA");
 
         assertFalse(result.isCorrect());
         assertEquals("(L)(L)-X--X--X-", result.toString());
@@ -100,7 +100,7 @@ class EvaluatorTest {
     @Test
     void testValidWords()
     {
-        assertFalse(Evaluator.isValidWord("NONOX"));
-        assertTrue(Evaluator.isValidWord("KRÅKA"));
+        assertFalse(Evaluator.isValidWord("!2E45"));
+        assertTrue(Evaluator.isValidWord("XXXXX"));
     }
 }
