@@ -32,8 +32,8 @@ Vad var svårast i uppgiften, och vad gjorde du för att komma vidare? Ungefär 
 
 | Del | Timmar |
 |-----|--------|
-| A   |        |
-| B   |        |
+| A   |    2h    |
+| B   |    4.5h    |
 | C   |        |
 | D   |        |
 | E   |        |
