@@ -1,5 +1,8 @@
 package ax.ha.pp1.wordgame;
 
+import java.nio.charset.CharsetEncoder;
+import java.util.Arrays;
+
 /**
  * Spelreglerna: kontrollerar ord och jämför en gissning med svaret.
  *
@@ -17,8 +20,15 @@ public class Evaluator {
     /**
      * Jämför gissningen med svaret. Versaler och gemener räknas lika.
      * Kastar IllegalArgumentException om gissningen eller svaret inte är ett giltigt ord.
+     * String[] k = guess.split("");
+     *
+     *         IO.println(Arrays.toString(k));
+     *
+     *         GuessResult result = new GuessResult("GUESS", new int[] {2, 2, 2, 2, 2});
+     *         return result;
      */
     public static GuessResult evaluate(String guess, String answer) {
         throw new UnsupportedOperationException("Inte implementerad än");
+
     }
 }
